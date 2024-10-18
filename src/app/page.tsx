@@ -56,6 +56,7 @@ export default function Home() {
   const control9 = useAnimation();
   const control10 = useAnimation();
   const control11 = useAnimation();
+  const control12 = useAnimation();
 
   const getRandomColor = () =>
     `hsl(${Math.floor(Math.random() * 360)}, 100%, 70%)`;
@@ -73,18 +74,28 @@ export default function Home() {
   const onConnectWallet = () => {
     setStatus(2);
 
-    control1
-      .start({
-        bottom: -28,
-        opacity: 0.2,
-        transition: { duration: 0.4 },
-      })
-      .then(() => {
-        control1.start({ opacity: 0.7, transition: { duration: 0.1 } });
-      });
+    control1.start({
+      bottom: -400,
+      opacity: [1, 0.4, 1],
+      transition: {
+        bottom: { duration: 0.8, ease: "easeInOut" },
+        opacity: { times: [0, 0.5, 1], duration: 0.8, ease: "linear" },
+      },
+    });
 
     control11.start({
-      height: 123,
+      clipPath: "polygon(0 0, 100% 0, 85% 100%, 15% 100%)",
+      transition: { duration: 0.8 },
+    });
+
+    control12.start({
+      clipPath: "polygon(1.2% 1.2%, 98.8% 1.2%, 85% 98.8%, 15% 98.8%)",
+      transition: { duration: 0.8 },
+    });
+
+    control9.start({
+      clipPath: "polygon(1.3% 1.3%, 98.7% 1.3%, 85% 98.7%, 15% 98.7%)",
+      transition: { duration: 0.8 },
     });
   };
 
@@ -132,7 +143,30 @@ export default function Home() {
         control8.start({ background: "#00ff00" });
         setIsVerify(3);
         setTimeout(() => {
-          control9.start({ display: "none", transition: { duration: 0.2 } });
+          control1.start({
+            bottom: -200,
+            opacity: [1, 0.4, 1],
+            transition: {
+              bottom: { duration: 0.8, ease: "easeInOut" },
+              opacity: { times: [0, 0.5, 1], duration: 0.8, ease: "linear" },
+            },
+          });
+
+          control11.start({
+            clipPath: "polygon(0 0, 100% 0, 95% 100%, 5% 100%)",
+            transition: { duration: 0.8 },
+          });
+
+          control12.start({
+            clipPath: "polygon(1.2% 1.2%, 98.8% 1.2%, 95% 98.8%, 5% 98.8%)",
+            transition: { duration: 0.8 },
+          });
+
+          control9.start({
+            clipPath: "polygon(1.3% 1.3%, 98.7% 1.3%, 95% 98.7%, 5% 98.7%)",
+            transition: { duration: 0.8 },
+          });
+
           control10
             .start({ height: 225.92, transition: { duration: 0.5 } })
             .then(() => {
@@ -412,19 +446,24 @@ export default function Home() {
         ))}
       </div>
       <motion.div
-        className="fixed w-[1264.92px] h-[338.33px] bottom-[-120px] left-1/2 -translate-x-1/2 z-0 bg-contain"
-        style={{ backgroundImage: `url('./images/Group1.png')` }}
-        animate={isVerify === 0 ? control1 : control9}
-      />
-      {isSuccess > 0 && (
+        className="absolute w-[1264.92px] h-[685.74px] fixed bottom-[-500px] left-1/2 -translate-x-1/2 z-0 p-1"
+        animate={control1}
+      >
         <motion.div
-          className="fixed w-[1264.92px] h-[685.74px] bottom-0 left-1/2 -translate-x-1/2 z-0 bg-contain"
-          style={{ backgroundImage: `url('./images/Group2.png')` }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-        />
-      )}
+          className="relative w-full h-full bg-gradient-to-r from-[rgba(246,177,101,0.2)] to-[rgba(145,100,245,0.2)] rounded-3xl clip-mask1"
+          animate={control11}
+        >
+          <motion.div
+            className="relative w-full h-full bg-gradient-to-r from-[rgba(246,177,101,1)] to-[rgba(145,100,245,1)] rounded-3xl clip-mask2"
+            animate={control12}
+          >
+            <motion.div
+              className="absolute inset-1 clip-content"
+              animate={control9}
+            />
+          </motion.div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 }
