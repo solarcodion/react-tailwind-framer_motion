@@ -75,7 +75,7 @@ export default function Home() {
     setStatus(2);
 
     control1.start({
-      bottom: -400,
+      bottom: -370,
       opacity: [1, 0.4, 1],
       transition: {
         bottom: { duration: 0.8, ease: "easeInOut" },
@@ -144,7 +144,7 @@ export default function Home() {
         setIsVerify(3);
         setTimeout(() => {
           control1.start({
-            bottom: -200,
+            bottom: -100,
             opacity: [1, 0.4, 1],
             transition: {
               bottom: { duration: 0.8, ease: "easeInOut" },
@@ -446,7 +446,7 @@ export default function Home() {
         ))}
       </div>
       <motion.div
-        className="absolute w-[1264.92px] h-[685.74px] fixed bottom-[-500px] left-1/2 -translate-x-1/2 z-0 p-1"
+        className="w-[1264.92px] h-[685.74px] fixed bottom-[-500px] left-1/2 -translate-x-1/2 z-0 p-1"
         animate={control1}
       >
         <motion.div
