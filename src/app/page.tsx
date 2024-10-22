@@ -208,7 +208,7 @@ export default function Home() {
       style={{ backgroundImage: `url('./images/Dots.png')` }}
     >
       <div
-        className="relative w-full h-full justify-center items-center bg-cover z-10"
+        className="relative w-full h-full justify-center items-center bg-cover z-50"
         style={{ backgroundImage: `url('./images/Background.png')` }}
       >
         <motion.div
@@ -247,206 +247,209 @@ export default function Home() {
               )}
             </div>
           </div>
-          <motion.div
-            className={`flex flex-col w-[450px] ${
-              status === 1 ? "h-[330.15px]" : "h-[386.15px]"
-            } rounded-[8px] border-[2px] border-[#28272C] p-[40px] gap-[40px] bg-[#111015] z-20`}
-            animate={isVerify === 2 ? control10 : control5}
-          >
-            <div className="w-[370px] h-[46px] gap-[48px]">
-              <p className="w-[370px] h-[48px] font-aeonik font-[400] text-[20px] leading-[23px] tracking-[0.02em] text-center text-normal">
-                {isSuccess === 0
-                  ? "Have an invitation code? Follow the steps bellow."
-                  : "All done! Simply launch the App to start using it"}
-              </p>
-            </div>
-            {isSuccess === 0 ? (
-              <div className="relative flex flex-col w-[330.09px] h-[164.15px] gap-[28.55px]">
-                <motion.div
-                  className={`absolute w-[0] ${
-                    status === 1 ? "h-[126.16px]" : "h-[176px]"
-                  } border-[3.57px] border-step_bg top-[19.6px] left-[14.4px] z-0`}
-                  animate={control6}
-                />
-                {status === 2 && (
-                  <div
-                    className={`absolute w-[0] h-[56.2px] border-[3.57px] border-step_bg top-[19.6px] left-[14.4px] z-10 border-[#27CD2D]`}
+          <div className="relative">
+            <motion.div
+              className={`relative flex flex-col w-[450px] ${
+                status === 1 ? "h-[330.15px]" : "h-[386.15px]"
+              } rounded-[8px] border-[2px] border-[#28272C] p-[40px] gap-[40px] bg-[#111015] z-20`}
+              animate={isVerify === 2 ? control10 : control5}
+            >
+              <div className="w-[370px] h-[46px] gap-[48px]">
+                <p className="w-[370px] h-[48px] font-aeonik font-[400] text-[20px] leading-[23px] tracking-[0.02em] text-center text-normal">
+                  {isSuccess === 0
+                    ? "Have an invitation code? Follow the steps bellow."
+                    : "All done! Simply launch the App to start using it"}
+                </p>
+              </div>
+              {isSuccess === 0 ? (
+                <div className="relative flex flex-col w-[330.09px] h-[164.15px] gap-[28.55px]">
+                  <motion.div
+                    className={`absolute w-[0] ${
+                      status === 1 ? "h-[126.16px]" : "h-[176px]"
+                    } border-[3.57px] border-step_bg top-[19.6px] left-[14.4px] z-0`}
+                    animate={control6}
                   />
-                )}
-                <div className="flex w-[330.09px] h-[35.69px] gap-[21.41px] z-10">
-                  <div
-                    className={`flex justify-center w-[35.69px] h-[35.69px] rounded-[71.37px] border-[0.71px] border-[0] gap-[5.71px] ${
-                      status === 2 ? "bg-step_bg_active" : "bg-step_bg"
-                    }`}
-                  >
-                    <p
-                      className={`flex items-center justify-center w-[17.13px] h-[35.69px] font-aeonik font-[500] text-[17.84px] leading-[20.52px] text-center ${
-                        status === 1 ? "text-active" : "text-normal"
-                      }`}
-                    >
-                      {status === 1 ? (
-                        "1"
-                      ) : (
-                        <IoCheckmarkOutline color="white" size={30} />
-                      )}
-                    </p>
-                  </div>
-                  <div className="w-[254.26px] h-[21px] gap-[4.46px] mt-auto mb-auto">
-                    <p
-                      className={`w-[125px] h-[21px] font-aeonik font-[500] text-[17.84px] leading-[20.52px] ${
-                        status === 1
-                          ? "text-active"
-                          : "text-normal line-through"
-                      }`}
-                    >
-                      Connect Wallet
-                    </p>
-                  </div>
-                </div>
-                <div className="flex flex-col z-20 gap-[21.41px]">
+                  {status === 2 && (
+                    <div
+                      className={`absolute w-[0] h-[56.2px] border-[3.57px] border-step_bg top-[19.6px] left-[14.4px] z-10 border-[#27CD2D]`}
+                    />
+                  )}
                   <div className="flex w-[330.09px] h-[35.69px] gap-[21.41px] z-10">
-                    <motion.div
-                      className="flex justify-center w-[35.69px] h-[35.69px] rounded-[71.37px] border-[0.71px] border-[0] gap-[5.71px] bg-step_bg"
-                      animate={control8}
+                    <div
+                      className={`flex justify-center w-[35.69px] h-[35.69px] rounded-[71.37px] border-[0.71px] border-[0] gap-[5.71px] ${
+                        status === 2 ? "bg-step_bg_active" : "bg-step_bg"
+                      }`}
                     >
                       <p
                         className={`flex items-center justify-center w-[17.13px] h-[35.69px] font-aeonik font-[500] text-[17.84px] leading-[20.52px] text-center ${
-                          status === 2 ? "text-active" : "text-normal"
+                          status === 1 ? "text-active" : "text-normal"
                         }`}
                       >
-                        {isVerify === 3 ? (
-                          <IoCheckmarkOutline color="white" size={30} />
+                        {status === 1 ? (
+                          "1"
                         ) : (
-                          "2"
+                          <IoCheckmarkOutline color="white" size={30} />
                         )}
                       </p>
-                    </motion.div>
+                    </div>
                     <div className="w-[254.26px] h-[21px] gap-[4.46px] mt-auto mb-auto">
                       <p
-                        className={`w-[254.26px] h-[21px] font-aeonik font-[500] text-[17.84px] leading-[20.52px] ${
-                          status === 2 ? "text-active" : "text-normal"
+                        className={`w-[125px] h-[21px] font-aeonik font-[500] text-[17.84px] leading-[20.52px] ${
+                          status === 1
+                            ? "text-active"
+                            : "text-normal line-through"
                         }`}
                       >
-                        Enter your invitation code
+                        Connect Wallet
                       </p>
                     </div>
                   </div>
-                  {status === 2 && (
-                    <div>
-                      <div className="flex w-[369px] h-[48px] pr-[57px] pl-[57px] z-10">
-                        <motion.input
-                          ref={ref}
-                          className="w-[177px] h-[48px] rounded-tl-[8px] rounded-bl-[8px] bg-input_bg pr-[16px] pl-[16px] border-none"
-                          placeholder="Invitation code"
-                          autoFocus
-                          onClick={onFocusInput}
-                          animate={control2}
-                        />
-                        <motion.button
-                          className="w-[78px] h-[48px] rounded-tr-[8.51px] rounded-br-[8.51px] bg-[#9063F8] pt-[12.77px] pr-[18px] pb-[12.77px] pl-[18px] gap-[8.51px]"
-                          onClick={handleVerify}
-                          animate={
-                            isVerify === 1
-                              ? control7
-                              : isVerify === 2
-                              ? control8
-                              : control3
-                          }
+                  <div className="flex flex-col z-20 gap-[21.41px]">
+                    <div className="flex w-[330.09px] h-[35.69px] gap-[21.41px] z-10">
+                      <motion.div
+                        className="flex justify-center w-[35.69px] h-[35.69px] rounded-[71.37px] border-[0.71px] border-[0] gap-[5.71px] bg-step_bg"
+                        animate={control8}
+                      >
+                        <p
+                          className={`flex items-center justify-center w-[17.13px] h-[35.69px] font-aeonik font-[500] text-[17.84px] leading-[20.52px] text-center ${
+                            status === 2 ? "text-active" : "text-normal"
+                          }`}
                         >
                           {isVerify === 3 ? (
                             <IoCheckmarkOutline color="white" size={30} />
-                          ) : isVerify === 2 ? (
-                            <motion.div
-                              className="w-[24px] h-[24px] border-2 border-t-transparent border-[#fffff] rounded-full"
-                              animate={{ rotate: 360 }}
-                              transition={{
-                                duration: 1,
-                                repeat: Infinity,
-                                ease: "linear",
-                              }}
-                            />
                           ) : (
-                            "Verify"
+                            "2"
                           )}
-                        </motion.button>
-                      </div>
-                      {isVerify === 1 && (
-                        <p className="w-[230px] h-[12px] text-[#FB4E4E] ml-[57px]">
-                          Invite invalid or already claimed.
                         </p>
-                      )}
+                      </motion.div>
+                      <div className="w-[254.26px] h-[21px] gap-[4.46px] mt-auto mb-auto">
+                        <p
+                          className={`w-[254.26px] h-[21px] font-aeonik font-[500] text-[17.84px] leading-[20.52px] ${
+                            status === 2 ? "text-active" : "text-normal"
+                          }`}
+                        >
+                          Enter your invitation code
+                        </p>
+                      </div>
                     </div>
+                    {status === 2 && (
+                      <div>
+                        <div className="flex w-[369px] h-[48px] pr-[57px] pl-[57px] z-10">
+                          <motion.input
+                            ref={ref}
+                            className="w-[177px] h-[48px] rounded-tl-[8px] rounded-bl-[8px] bg-input_bg pr-[16px] pl-[16px] border-none"
+                            placeholder="Invitation code"
+                            autoFocus
+                            onClick={onFocusInput}
+                            animate={control2}
+                          />
+                          <motion.button
+                            className="w-[78px] h-[48px] rounded-tr-[8.51px] rounded-br-[8.51px] bg-[#9063F8] pt-[12.77px] pr-[18px] pb-[12.77px] pl-[18px] gap-[8.51px]"
+                            onClick={handleVerify}
+                            animate={
+                              isVerify === 1
+                                ? control7
+                                : isVerify === 2
+                                ? control8
+                                : control3
+                            }
+                          >
+                            {isVerify === 3 ? (
+                              <IoCheckmarkOutline color="white" size={30} />
+                            ) : isVerify === 2 ? (
+                              <motion.div
+                                className="w-[24px] h-[24px] border-2 border-t-transparent border-[#fffff] rounded-full"
+                                animate={{ rotate: 360 }}
+                                transition={{
+                                  duration: 1,
+                                  repeat: Infinity,
+                                  ease: "linear",
+                                }}
+                              />
+                            ) : (
+                              "Verify"
+                            )}
+                          </motion.button>
+                        </div>
+                        {isVerify === 1 && (
+                          <p className="w-[230px] h-[12px] text-[#FB4E4E] ml-[57px]">
+                            Invite invalid or already claimed.
+                          </p>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                  <div className="flex w-[330.09px] h-[35.69px] gap-[21.41px] z-10">
+                    <div className="flex justify-center w-[35.69px] h-[35.69px] rounded-[71.37px] border-[0.71px] border-[0] gap-[5.71px] bg-step_bg">
+                      <p
+                        className={`flex items-center justify-center w-[17.13px] h-[35.69px] font-aeonik font-[500] text-[17.84px] leading-[20.52px] text-center ${
+                          status === 3 ? "text-active" : "text-normal"
+                        }`}
+                      >
+                        3
+                      </p>
+                    </div>
+                    <div className="w-[254.26px] h-[21px] gap-[4.46px] mt-auto mb-auto">
+                      <p
+                        className={`w-[125px] h-[21px] font-aeonik font-[500] text-[17.84px] leading-[20.52px] ${
+                          status === 3 ? "text-active" : "text-normal"
+                        }`}
+                      >
+                        You are in!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div>
+                  <div className="w-[330.09px] h-[35.69px]" />
+                  <div className="flex w-[330.09px] h-[35.69px] gap-[21.41px]">
+                    <div
+                      className={`flex justify-center w-[35.69px] h-[35.69px] rounded-[71.37px] border-[0.71px] border-[0] gap-[5.71px] ${
+                        status === 2 ? "bg-step_bg_active" : "bg-step_bg"
+                      }`}
+                    >
+                      <p
+                        className={`flex items-center justify-center w-[17.13px] h-[35.69px] font-aeonik font-[500] text-[17.84px] leading-[20.52px] text-center ${
+                          status === 1 ? "text-active" : "text-normal"
+                        }`}
+                      >
+                        <IoCheckmarkOutline color="white" size={30} />
+                      </p>
+                    </div>
+                    <div className="w-[254.26px] h-[21px] gap-[4.46px] mt-auto mb-auto">
+                      <p
+                        className={`w-[125px] h-[21px] font-aeonik font-[500] text-[17.84px] leading-[20.52px] text-active`}
+                      >
+                        You are in!
+                      </p>
+                    </div>
+                  </div>
+                  {isSuccess === 2 && (
+                    <button className="w-[370px] h-[51.06px] rounded-[8.51px] pt-[12.77px] pr-[35px] pb-[12.77px] pl-[35px] bg-[#9063f8] mt-[29px]">
+                      Launch App
+                    </button>
                   )}
                 </div>
-                <div className="flex w-[330.09px] h-[35.69px] gap-[21.41px] z-10">
-                  <div className="flex justify-center w-[35.69px] h-[35.69px] rounded-[71.37px] border-[0.71px] border-[0] gap-[5.71px] bg-step_bg">
-                    <p
-                      className={`flex items-center justify-center w-[17.13px] h-[35.69px] font-aeonik font-[500] text-[17.84px] leading-[20.52px] text-center ${
-                        status === 3 ? "text-active" : "text-normal"
-                      }`}
-                    >
-                      3
-                    </p>
-                  </div>
-                  <div className="w-[254.26px] h-[21px] gap-[4.46px] mt-auto mb-auto">
-                    <p
-                      className={`w-[125px] h-[21px] font-aeonik font-[500] text-[17.84px] leading-[20.52px] ${
-                        status === 3 ? "text-active" : "text-normal"
-                      }`}
-                    >
-                      You are in!
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ) : (
-              <div>
-                <div className="w-[330.09px] h-[35.69px]" />
-                <div className="flex w-[330.09px] h-[35.69px] gap-[21.41px]">
-                  <div
-                    className={`flex justify-center w-[35.69px] h-[35.69px] rounded-[71.37px] border-[0.71px] border-[0] gap-[5.71px] ${
-                      status === 2 ? "bg-step_bg_active" : "bg-step_bg"
-                    }`}
-                  >
-                    <p
-                      className={`flex items-center justify-center w-[17.13px] h-[35.69px] font-aeonik font-[500] text-[17.84px] leading-[20.52px] text-center ${
-                        status === 1 ? "text-active" : "text-normal"
-                      }`}
-                    >
-                      <IoCheckmarkOutline color="white" size={30} />
-                    </p>
-                  </div>
-                  <div className="w-[254.26px] h-[21px] gap-[4.46px] mt-auto mb-auto">
-                    <p
-                      className={`w-[125px] h-[21px] font-aeonik font-[500] text-[17.84px] leading-[20.52px] text-active`}
-                    >
-                      You are in!
-                    </p>
-                  </div>
-                </div>
-                {isSuccess === 2 && (
-                  <button className="w-[370px] h-[51.06px] rounded-[8.51px] pt-[12.77px] pr-[35px] pb-[12.77px] pl-[35px] bg-[#9063f8] mt-[29px]">
-                    Launch App
-                  </button>
-                )}
-              </div>
-            )}
-          </motion.div>
+              )}
+            </motion.div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0">
+              {particles.map((particle, index) => (
+                <PaperParticle
+                  key={index}
+                  x={particle.x}
+                  y={particle.y}
+                  rotate={particle.rotate}
+                  color={particle.color}
+                />
+              ))}
+            </div>
+          </div>
         </motion.div>
       </div>
-      <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
-        {particles.map((particle, index) => (
-          <PaperParticle
-            key={index}
-            x={particle.x}
-            y={particle.y}
-            rotate={particle.rotate}
-            color={particle.color}
-          />
-        ))}
-      </div>
+
       <motion.div
-        className="absolute w-[1264.92px] h-[685.74px] bottom-[-500px] left-1/2 -translate-x-1/2 z-0"
+        className="fixed w-[1264.92px] h-[685.74px] bottom-[-500px] left-1/2 -translate-x-1/2 z-0"
         animate={control1}
       >
         <motion.div
