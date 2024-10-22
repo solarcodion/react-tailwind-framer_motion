@@ -18,7 +18,7 @@ const PaperParticle = ({
   <motion.div
     className="absolute"
     style={{
-      width: `${Math.random() * 20 + 10}px`,
+      width: `${Math.random() * 10 + 5}px`,
       height: `${Math.random() * 20 + 10}px`,
       backgroundColor: color,
     }}
