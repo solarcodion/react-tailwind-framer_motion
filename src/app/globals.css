@@ -48,3 +48,13 @@ body {
 .clip-mask2 {
   clip-path: polygon(1.2% 1.2%, 98.8% 1.2%, 70% 98.8%, 30% 98.8%);
 }
+
+.gradient-border {
+  position: relative;
+  border: 2.39px solid transparent;
+  border-radius: 0.5rem; /* rounded-lg */
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-image: linear-gradient(90deg, #f6b165 0%, #9164f5 100%),
+    linear-gradient(white, white);
+}

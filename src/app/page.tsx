@@ -153,17 +153,17 @@ export default function Home() {
           });
 
           control11.start({
-            clipPath: "polygon(0 0, 100% 0, 95% 100%, 5% 100%)",
+            clipPath: "polygon(0 0, 100% 0, 96% 100%, 4% 100%)",
             transition: { duration: 0.8 },
           });
 
           control12.start({
-            clipPath: "polygon(1.2% 1.2%, 98.8% 1.2%, 95% 98.8%, 5% 98.8%)",
+            clipPath: "polygon(1.2% 2%, 98.8% 2%, 95% 98.8%, 5% 98.8%)",
             transition: { duration: 0.8 },
           });
 
           control9.start({
-            clipPath: "polygon(1.3% 1.3%, 98.7% 1.3%, 95% 98.7%, 5% 98.7%)",
+            clipPath: "polygon(1.3% 2.1%, 98.7% 2.1%, 95% 98.7%, 5% 98.7%)",
             transition: { duration: 0.8 },
           });
 
@@ -208,7 +208,7 @@ export default function Home() {
       style={{ backgroundImage: `url('./images/Dots.png')` }}
     >
       <div
-        className="w-full h-full justify-center items-center bg-cover"
+        className="relative w-full h-full justify-center items-center bg-cover z-10"
         style={{ backgroundImage: `url('./images/Background.png')` }}
       >
         <motion.div
@@ -434,7 +434,7 @@ export default function Home() {
           </motion.div>
         </motion.div>
       </div>
-      <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+      <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
         {particles.map((particle, index) => (
           <PaperParticle
             key={index}
@@ -446,15 +446,15 @@ export default function Home() {
         ))}
       </div>
       <motion.div
-        className="w-[1264.92px] h-[685.74px] fixed bottom-[-500px] left-1/2 -translate-x-1/2 z-0 p-1"
+        className="absolute w-[1264.92px] h-[685.74px] bottom-[-500px] left-1/2 -translate-x-1/2 z-0"
         animate={control1}
       >
         <motion.div
-          className="relative w-full h-full bg-gradient-to-r from-[rgba(246,177,101,0.2)] to-[rgba(145,100,245,0.2)] rounded-3xl clip-mask1"
+          className="relative w-full h-full bg-gradient-to-r from-opacity_orange to-opacity_pink rounded-3xl clip-mask1"
           animate={control11}
         >
           <motion.div
-            className="relative w-full h-full bg-gradient-to-r from-[rgba(246,177,101,1)] to-[rgba(145,100,245,1)] rounded-3xl clip-mask2"
+            className="relative w-full h-full bg-gradient-to-r from-orange to-pink rounded-3xl clip-mask2"
             animate={control12}
           >
             <motion.div
