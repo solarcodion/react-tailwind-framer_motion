@@ -55,8 +55,6 @@ export default function Home() {
   const control8 = useAnimation();
   const control9 = useAnimation();
   const control10 = useAnimation();
-  const control11 = useAnimation();
-  const control12 = useAnimation();
 
   const getRandomColor = () =>
     `hsl(${Math.floor(Math.random() * 360)}, 100%, 70%)`;
@@ -75,27 +73,12 @@ export default function Home() {
     setStatus(2);
 
     control1.start({
-      bottom: -370,
-      opacity: [1, 0.4, 1],
-      transition: {
-        bottom: { duration: 0.8, ease: "easeInOut" },
-        opacity: { times: [0, 0.5, 1], duration: 0.8, ease: "linear" },
-      },
+      bottom: -510,
+      transition: { duration: 0.4 },
     });
-
-    control11.start({
-      clipPath: "polygon(0 0, 100% 0, 85% 100%, 15% 100%)",
-      transition: { duration: 0.8 },
-    });
-
-    control12.start({
-      clipPath: "polygon(1.2% 1.2%, 98.8% 1.2%, 85% 98.8%, 15% 98.8%)",
-      transition: { duration: 0.8 },
-    });
-
     control9.start({
-      clipPath: "polygon(1.3% 1.3%, 98.7% 1.3%, 85% 98.7%, 15% 98.7%)",
-      transition: { duration: 0.8 },
+      transform: "rotateX(-1.1deg)",
+      transition: { duration: 0.4 },
     });
   };
 
@@ -145,28 +128,13 @@ export default function Home() {
         setTimeout(() => {
           control1.start({
             bottom: -100,
-            opacity: [1, 0.4, 1],
-            transition: {
-              bottom: { duration: 0.8, ease: "easeInOut" },
-              opacity: { times: [0, 0.5, 1], duration: 0.8, ease: "linear" },
-            },
+            transition: { duration: 0.6 },
           });
-
-          control11.start({
-            clipPath: "polygon(0 0, 100% 0, 96% 100%, 4% 100%)",
-            transition: { duration: 0.8 },
-          });
-
-          control12.start({
-            clipPath: "polygon(1.2% 2%, 98.8% 2%, 95% 98.8%, 5% 98.8%)",
-            transition: { duration: 0.8 },
-          });
-
           control9.start({
-            clipPath: "polygon(1.3% 2.1%, 98.7% 2.1%, 95% 98.7%, 5% 98.7%)",
-            transition: { duration: 0.8 },
+            width: 1300,
+            transform: "rotateX(0deg)",
+            transition: { duration: 0.6 },
           });
-
           control10
             .start({ height: 225.92, transition: { duration: 0.5 } })
             .then(() => {
@@ -204,7 +172,7 @@ export default function Home() {
 
   return (
     <div
-      className="w-screen h-screen bg-[#1d1c21] overflow-hidden"
+      className="relative w-screen h-screen bg-[#1d1c21] overflow-hidden"
       style={{ backgroundImage: `url('./images/Dots.png')` }}
     >
       <div
@@ -447,25 +415,15 @@ export default function Home() {
           </div>
         </motion.div>
       </div>
-
       <motion.div
-        className="fixed w-[1264.92px] h-[685.74px] bottom-[-500px] left-1/2 -translate-x-1/2 z-0"
+        className="flex justify-center fixed w-[1300px] h-[685.74px] bottom-[-630px] left-1/2 -translate-x-1/2 effect-contain"
         animate={control1}
       >
         <motion.div
-          className="relative w-full h-full bg-gradient-to-r from-opacity_orange to-opacity_pink rounded-3xl clip-mask1"
-          animate={control11}
-        >
-          <motion.div
-            className="relative w-full h-full bg-gradient-to-r from-orange to-pink rounded-3xl clip-mask2"
-            animate={control12}
-          >
-            <motion.div
-              className="absolute inset-1 clip-content"
-              animate={control9}
-            />
-          </motion.div>
-        </motion.div>
+          className="w-[1000px] h-[685.74px] bg-contain effect"
+          style={{ backgroundImage: `url('./images/Bottom.png')` }}
+          animate={control9}
+        />
       </motion.div>
     </div>
   );
