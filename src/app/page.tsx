@@ -426,11 +426,6 @@ export default function Home() {
           animate={control9}
         />
       </motion.div>
-      {/* <div className="fixed bottom-0 left-1/2 -translate-x-1/2">
-        <div id="div1">
-          <div id="div2">DIV2</div>
-        </div>
-      </div> */}
     </div>
   );
 }

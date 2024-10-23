@@ -51,25 +51,3 @@ body {
   transform: rotateX(-1.3deg);
   transform-origin: top;
 }
-
-#div1 {
-  position: relative;
-  /* display: flex;
-  justify-content: center; */
-  height: 150px;
-  width: 150px;
-  border: 1px solid blue;
-  perspective: 100px;
-  perspective-origin: top;
-}
-
-#div2 {
-  padding: 50px;
-  position: absolute;
-  top: 0;
-  border: 1px solid black;
-  background: rgba(100, 100, 100, 0.5);
-  transform-style: preserve-3d;
-  transform: rotateX(-45deg);
-  transform-origin: top;
-}
