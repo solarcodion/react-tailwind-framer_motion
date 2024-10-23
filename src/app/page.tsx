@@ -73,13 +73,15 @@ export default function Home() {
     setStatus(2);
 
     control1.start({
-      bottom: -510,
+      bottom: -360,
       transition: { duration: 0.4 },
     });
-    control9.start({
-      transform: "rotateX(-1.1deg)",
-      transition: { duration: 0.4 },
-    });
+    control9
+      .start({
+        transform: "rotateX(-1deg)",
+        transition: { duration: 0.4 },
+      })
+      .then(() => {});
   };
 
   const onFocusInput = () => {
@@ -127,13 +129,12 @@ export default function Home() {
         setIsVerify(3);
         setTimeout(() => {
           control1.start({
-            bottom: -100,
-            transition: { duration: 0.6 },
+            bottom: -80,
+            transition: { duration: 0.8 },
           });
           control9.start({
-            width: 1300,
             transform: "rotateX(0deg)",
-            transition: { duration: 0.6 },
+            transition: { duration: 0.8 },
           });
           control10
             .start({ height: 225.92, transition: { duration: 0.5 } })
@@ -416,15 +417,20 @@ export default function Home() {
         </motion.div>
       </div>
       <motion.div
-        className="flex justify-center fixed w-[1300px] h-[685.74px] bottom-[-630px] left-1/2 -translate-x-1/2 effect-contain"
+        className="flex justify-center fixed w-[1300px] h-[685.74px] bottom-[-450px] left-1/2 -translate-x-1/2 effect-contain"
         animate={control1}
       >
         <motion.div
-          className="w-[1000px] h-[685.74px] bg-contain effect"
+          className="w-[1300px] h-[685.74px] bg-contain effect"
           style={{ backgroundImage: `url('./images/Bottom.png')` }}
           animate={control9}
         />
       </motion.div>
+      {/* <div className="fixed bottom-0 left-1/2 -translate-x-1/2">
+        <div id="div1">
+          <div id="div2">DIV2</div>
+        </div>
+      </div> */}
     </div>
   );
 }
